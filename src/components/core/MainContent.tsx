@@ -5,7 +5,6 @@ import { ErrorNetworkConnection } from 'components/core/error/ErrorNetworkConnec
 import { useTokens } from 'hooks/useTokens';
 import { ErrorTokenList } from 'components/core/error/ErrorTokenList';
 import { useCarbonInit } from 'hooks/useCarbonInit';
-import { ErrorSDKStartSync } from 'components/core/error/ErrorSDKStartSync';
 import { carbonEvents } from 'services/events';
 import { ErrorUserBlocked } from 'components/core/error/ErrorUserBlocked';
 import {
@@ -57,9 +56,9 @@ export const MainContent: FC = () => {
     return <ErrorNetworkConnection />;
   }
 
-  if (sdk.isError) {
-    return <ErrorSDKStartSync />;
-  }
+  // if (sdk.isError) {
+  //   return <ErrorSDKStartSync />;
+  // }
 
   if (tokens.isError) {
     return <ErrorTokenList />;

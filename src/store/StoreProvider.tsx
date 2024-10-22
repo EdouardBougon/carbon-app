@@ -70,7 +70,7 @@ interface StoreContext {
 }
 
 const defaultValue: StoreContext = {
-  isCountryBlocked: null,
+  isCountryBlocked: false,
   setCountryBlocked: () => {},
   sdk: defaultSDKStore,
   tokens: defaultTokensStore,
@@ -101,7 +101,7 @@ export const useStore = () => {
 // ********************************** //
 
 export const StoreProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [countryBlocked, setCountryBlocked] = useState<boolean | null>(null);
+  const [countryBlocked, setCountryBlocked] = useState<boolean | null>(false);
   const [innerHeight, setInnerHeight] = useState<number>(window.innerHeight);
   const sdk = useSDKStore();
   const tradeSettings = useTradeSettingsStore();
